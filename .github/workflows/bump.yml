@@ -9,6 +9,9 @@ on:
     - cron: '0 2 * * *'
   workflow_dispatch:
 
+env:
+  HOMEBREW_TAP: huangyxi/tap
+
 jobs:
   bump:
     runs-on: macos-latest
@@ -21,10 +24,13 @@ jobs:
         run: |
           brew untap homebrew/core || true
           brew untap homebrew/cask || true
+      - name: Tap the custom tap
+        run: |
+          brew tap ${{ env.HOMEBREW_TAP }}
       - name: Bump version and create PR
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          brew bump --tap huangyxi/tap --open-pr --no-fork
+          brew bump --tap ${{ env.HOMEBREW_TAP }} --open-pr --no-fork
 
 # Ref https://github.com/loozhengyuan/homebrew-tap/blob/main/.github/workflows/bump.yml
