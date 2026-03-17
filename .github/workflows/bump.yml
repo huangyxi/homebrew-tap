@@ -1,6 +1,7 @@
 name: brew bump
 
-permissions: {}
+permissions:
+  contents: write
 
 on:
   schedule:
