@@ -1,8 +1,8 @@
 class BrewNoQuarantine < Formula
   desc "Homebrew wrapper to remove the quarantine attribute from casks"
   homepage "https://github.com/huangyxi/brew-no-quarantine"
-  url "https://github.com/huangyxi/brew-no-quarantine/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "a891a60db3bd39396676e7aeaa1471673fc4b8ce3d237e14713f3fbdfe3dbf9c"
+  url "https://github.com/huangyxi/brew-no-quarantine/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "04e46ac3d393f62b13191519d4730beb37ee33a84cf84e64a88af7d8314dddb1"
   license "MIT"
 
   depends_on :macos
